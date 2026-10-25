@@ -1,0 +1,85 @@
+backend:
+  name: github
+  repo: nguyentrang2309/nguyentrang2309.github.io
+  branch: main
+
+media_folder: uploads
+public_folder: /uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: blog
+    label: "Bài viết blog"
+    label_singular: "bài viết"
+    folder: _posts
+    create: true
+    extension: md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { name: title, label: "Tiêu đề", widget: string }
+      - { name: date, label: "Ngày đăng", widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+      - { name: summary, label: "Tóm tắt (1-2 câu, hiện ở danh sách blog)", widget: text }
+      - { name: published, label: "Hiển thị công khai (tắt để lưu nháp)", widget: boolean, default: true }
+      - { name: body, label: "Nội dung", widget: markdown }
+
+  - name: pages
+    label: "Nội dung website"
+    files:
+      - name: site
+        label: "Trang chủ và thông tin chung"
+        file: _data/site.yml
+        fields:
+          - { name: name, label: "Tên hiển thị", widget: string }
+          - { name: short_name, label: "Tên ngắn (thanh menu)", widget: string }
+          - { name: page_title, label: "Tiêu đề tab trình duyệt", widget: string }
+          - { name: description, label: "Mô tả cho Google", widget: text }
+          - { name: photo, label: "Ảnh chân dung", widget: image }
+          - { name: role, label: "Dòng giới thiệu", widget: text }
+          - { name: cta_label, label: "Chữ trên nút liên hệ", widget: string }
+          - { name: stats_title, label: "Tiêu đề phần Con số", widget: string }
+          - { name: stats_intro, label: "Giới thiệu phần Con số", widget: string }
+          - name: stats
+            label: "Các con số nổi bật"
+            widget: list
+            fields:
+              - { name: value, label: "Con số", widget: string }
+              - { name: label, label: "Mô tả", widget: string }
+          - { name: work_title, label: "Tiêu đề phần Việc đã làm", widget: string }
+          - name: work
+            label: "Việc đã làm"
+            widget: list
+            fields:
+              - { name: title, label: "Tên việc", widget: string }
+              - { name: text, label: "Mô tả", widget: text }
+          - { name: journey_title, label: "Tiêu đề phần Hành trình", widget: string }
+          - name: journey
+            label: "Hành trình"
+            widget: list
+            fields:
+              - { name: when, label: "Thời gian", widget: string }
+              - { name: title, label: "Vị trí, nơi làm", widget: string }
+              - { name: text, label: "Mô tả (có thể để trống)", widget: text, required: false }
+          - { name: skills_title, label: "Tiêu đề phần Kỹ năng", widget: string }
+          - name: skills
+            label: "Kỹ năng"
+            widget: list
+            fields:
+              - { name: name, label: "Tên kỹ năng", widget: string }
+              - { name: main, label: "Kỹ năng nổi bật (tô đậm)", widget: boolean, default: false }
+          - { name: blog_title, label: "Tiêu đề phần Blog", widget: string }
+          - { name: blog_intro, label: "Giới thiệu trang Blog", widget: text }
+          - { name: blog_teaser, label: "Câu giới thiệu Blog ở trang chủ", widget: text }
+          - { name: blog_empty, label: "Dòng khi chưa có bài", widget: string }
+          - { name: blog_empty_text, label: "Mô tả khi chưa có bài", widget: text }
+          - { name: contact_title, label: "Tiêu đề phần Liên hệ", widget: string }
+          - { name: contact_intro, label: "Lời mời liên hệ", widget: text }
+          - name: contact
+            label: "Kênh liên hệ"
+            widget: list
+            fields:
+              - { name: label, label: "Tên nút", widget: string }
+              - { name: url, label: "Đường link (email: mailto:địa-chỉ)", widget: string }

@@ -1,106 +1,82 @@
-<!doctype html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nguyễn Thùy Trang | Growth Marketing</title>
-<meta name="description" content="Nguyễn Thùy Trang, Lead Marketing tại NNX. Growth Marketing: tăng trưởng khách hàng và cộng tác viên cho doanh nghiệp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Thùy Trang</a>
-  <div><a href="index.html" aria-current="page">Trang chủ</a><a href="blog.html">Blog</a></div>
-</div></nav>
-
+---
+layout: default
+title: "Nguyễn Thùy Trang | Growth Marketing"
+---
+{% assign s = site.data.site %}
 <header class="hero">
   <div class="wrap">
-    <img class="avatar" src="chan-dung.jpg" alt="Ảnh chân dung Nguyễn Thùy Trang" width="168" height="168">
-    <h1>Nguyễn Thùy Trang</h1>
-    <p class="role">Lead Marketing tại NNX · Growth Marketing: tăng trưởng khách hàng và cộng tác viên cho doanh nghiệp</p>
-    <a class="btn" href="#lien-he">Liên hệ với mình</a>
+    <img class="avatar" src="{{ s.photo }}" alt="Ảnh chân dung {{ s.name }}" width="168" height="168">
+    <h1>{{ s.name }}</h1>
+    <p class="role">{{ s.role }}</p>
+    <a class="btn" href="#lien-he">{{ s.cta_label }}</a>
   </div>
 </header>
 
 <main>
   <section>
     <div class="wrap">
-      <h2>Con số nổi bật</h2>
-      <p class="sub">Kênh cộng tác viên của NNX, triển khai từ năm 2025.</p>
+      <h2>{{ s.stats_title }}</h2>
+      <p class="sub">{{ s.stats_intro }}</p>
       <div class="stats">
-        <div class="stat"><b>~1.000</b><span>cộng tác viên sau hơn 1 năm</span></div>
-        <div class="stat"><b>~1 tỷ</b><span>đồng doanh thu phí mỗi tháng (toàn kênh)</span></div>
-        <div class="stat"><b>~5 năm</b><span>làm Marketing tại NNX</span></div>
+        {% for item in s.stats %}
+        <div class="stat"><b>{{ item.value }}</b><span>{{ item.label }}</span></div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>Mình đã làm gì ở kênh cộng tác viên</h2>
+      <h2>{{ s.work_title }}</h2>
       <div class="cards">
-        <div class="card"><h3>Luồng onboard</h3><p>Thiết lập luồng đón cộng tác viên mới, từ lúc biết đến tới lúc đăng ký thành công.</p></div>
-        <div class="card"><h3>Đo lường từng bước</h3><p>Theo dõi hiệu quả ở mỗi bước: biết đến, tìm hiểu, chuyển đổi.</p></div>
-        <div class="card"><h3>Phối hợp cùng đội sale</h3><p>Cùng sale thúc đẩy doanh thu trên mỗi cộng tác viên.</p></div>
-        <div class="card"><h3>Sự kiện và content</h3><p>Tổ chức sự kiện, chương trình nội dung để cộng tác viên hoạt động và gắn bó hơn.</p></div>
+        {% for item in s.work %}
+        <div class="card"><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>Hành trình</h2>
+      <h2>{{ s.journey_title }}</h2>
       <ul class="timeline">
-        <li><span class="when">Cuối 2021 – nay</span><h3>Lead Marketing, NNX (Bảo hiểm Ngôi Nhà Xanh)</h3><p>Đại lý tổ chức phân phối bảo hiểm qua hệ thống cửa hàng F88 và kênh cộng tác viên.</p></li>
-        <li><span class="when">2020 – cuối 2021</span><h3>Truyền thông, ngành spa</h3></li>
-        <li><span class="when">2018 – 2020</span><h3>Nghiên cứu thị trường, Kantar TNS</h3></li>
+        {% for item in s.journey %}
+        <li><span class="when">{{ item.when }}</span><h3>{{ item.title }}</h3>{% if item.text != "" %}<p>{{ item.text }}</p>{% endif %}</li>
+        {% endfor %}
       </ul>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>Kỹ năng</h2>
+      <h2>{{ s.skills_title }}</h2>
       <ul class="chips">
-        <li class="main">Bán hàng</li>
-        <li class="main">Hành trình khách hàng</li>
-        <li>Tổ chức sự kiện</li>
-        <li>Nghiên cứu thị trường</li>
-        <li>Tài liệu hỗ trợ bán hàng</li>
-        <li>Content bán hàng</li>
-        <li>Phối hợp với đội sale</li>
+        {% for item in s.skills %}
+        <li{% if item.main %} class="main"{% endif %}>{{ item.name }}</li>
+        {% endfor %}
       </ul>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>Blog</h2>
+      <h2>{{ s.blog_title }}</h2>
       <div class="blog">
-        <p>Mình sẽ chia sẻ kiến thức và kinh nghiệm Growth Marketing học được trong lúc vừa làm vừa học.</p>
-        <a class="btn" href="blog.html">Đến trang Blog</a>
+        <p>{{ s.blog_teaser }}</p>
+        <a class="btn" href="/blog.html">Đến trang Blog</a>
       </div>
     </div>
   </section>
 
   <section class="contact" id="lien-he">
     <div class="wrap">
-      <h2>Liên hệ công việc</h2>
-      <p>Nếu bạn đang tìm người làm Growth Marketing, mình rất vui được trò chuyện.</p>
+      <h2>{{ s.contact_title }}</h2>
+      <p>{{ s.contact_intro }}</p>
       <div class="links">
-        <a href="mailto:trang.nguyenthuy2309@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/th%C3%B9y-trang-nguy%E1%BB%85n-0b5959446/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://zalo.me/0356345436" target="_blank" rel="noopener">Zalo</a>
-        <a href="https://www.facebook.com/thuytrangng1996" target="_blank" rel="noopener">Facebook</a>
+        {% for link in s.contact %}
+        <a href="{{ link.url }}"{% unless link.url contains "mailto:" %} target="_blank" rel="noopener"{% endunless %}>{{ link.label }}</a>
+        {% endfor %}
       </div>
     </div>
   </section>
 </main>
-
-<footer>© Nguyễn Thùy Trang · <a href="blog.html">Blog</a></footer>
-</body>
-</html>

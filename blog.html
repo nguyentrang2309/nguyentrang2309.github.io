@@ -1,52 +1,35 @@
-<!doctype html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog | Nguyễn Thùy Trang</title>
-<meta name="description" content="Chia sẻ kiến thức và kinh nghiệm Growth Marketing của Nguyễn Thùy Trang.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<nav class="nav"><div class="wrap">
-  <a class="brand" href="index.html">Thùy Trang</a>
-  <div><a href="index.html">Trang chủ</a><a href="blog.html" aria-current="page">Blog</a></div>
-</div></nav>
-
+---
+layout: default
+title: "Blog | Nguyễn Thùy Trang"
+description: "Chia sẻ kiến thức và kinh nghiệm Growth Marketing của Nguyễn Thùy Trang."
+---
+{% assign s = site.data.site %}
 <header class="page-head">
   <div class="wrap">
-    <h1>Blog</h1>
-    <p>Kiến thức và kinh nghiệm Growth Marketing mình học được trong lúc vừa làm vừa học.</p>
+    <h1>{{ s.blog_title }}</h1>
+    <p>{{ s.blog_intro }}</p>
   </div>
 </header>
 
 <main>
   <section>
     <div class="wrap">
-      <!-- Bài mới nhất để trên cùng. Mỗi bài là một mục <li class="post"> như mẫu dưới đây:
-      <li class="post"><a href="blog/ten-bai.html">
-        <span class="meta">25/10/2026</span>
-        <h2>Tiêu đề bài viết</h2>
-        <p>Một hai câu tóm tắt.</p>
-      </a></li>
-      -->
-      <ul class="posts"></ul>
-      <div class="empty" id="empty">
-        <p><b>Bài viết đầu tiên sắp ra mắt.</b></p>
-        <p>Mình sẽ chia sẻ về tăng trưởng cộng tác viên, hành trình khách hàng và marketing hỗ trợ bán hàng.</p>
+      {% if site.posts.size > 0 %}
+      <ul class="posts">
+        {% for post in site.posts %}
+        <li class="post"><a href="{{ post.url }}">
+          <span class="meta">{{ post.date | date: "%d/%m/%Y" }}</span>
+          <h2>{{ post.title }}</h2>
+          {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+        </a></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="empty">
+        <p><b>{{ s.blog_empty }}</b></p>
+        <p>{{ s.blog_empty_text }}</p>
       </div>
+      {% endif %}
     </div>
   </section>
 </main>
-
-<footer>© Nguyễn Thùy Trang · <a href="index.html">Trang chủ</a></footer>
-<script>
-  // Ẩn khung "sắp ra mắt" khi đã có bài viết
-  if (document.querySelector(".posts li")) document.getElementById("empty").hidden = true;
-</script>
-</body>
-</html>

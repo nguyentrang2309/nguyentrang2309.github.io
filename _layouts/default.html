@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description | default: site.data.site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">{{ site.data.site.short_name }}</a>
+  <div>
+    <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Trang chủ</a>
+    <a href="/blog.html"{% if page.url contains "/blog" %} aria-current="page"{% endif %}>Blog</a>
+  </div>
+</div></nav>
+
+{{ content }}
+
+<footer>© {{ site.data.site.name }} · <a href="/blog.html">Blog</a></footer>
+</body>
+</html>

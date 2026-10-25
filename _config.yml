@@ -1,0 +1,14 @@
+title: Nguyễn Thùy Trang
+lang: vi
+timezone: Asia/Ho_Chi_Minh
+permalink: /blog/:title/
+markdown: kramdown
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile

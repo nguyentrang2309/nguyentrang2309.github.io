@@ -1,0 +1,75 @@
+name: "Nguyễn Thùy Trang"
+short_name: "Thùy Trang"
+page_title: "Nguyễn Thùy Trang | Growth Marketing"
+description: "Nguyễn Thùy Trang, Lead Marketing tại NNX. Growth Marketing: tăng trưởng khách hàng và cộng tác viên cho doanh nghiệp."
+photo: "/chan-dung.jpg"
+role: "Lead Marketing tại NNX · Growth Marketing: tăng trưởng khách hàng và cộng tác viên cho doanh nghiệp"
+cta_label: "Liên hệ với mình"
+
+stats_title: "Con số nổi bật"
+stats_intro: "Kênh cộng tác viên của NNX, triển khai từ năm 2025."
+stats:
+  - value: "~1.000"
+    label: "cộng tác viên sau hơn 1 năm"
+  - value: "~1 tỷ"
+    label: "đồng doanh thu phí mỗi tháng (toàn kênh)"
+  - value: "~5 năm"
+    label: "làm Marketing tại NNX"
+
+work_title: "Mình đã làm gì ở kênh cộng tác viên"
+work:
+  - title: "Luồng onboard"
+    text: "Thiết lập luồng đón cộng tác viên mới, từ lúc biết đến tới lúc đăng ký thành công."
+  - title: "Đo lường từng bước"
+    text: "Theo dõi hiệu quả ở mỗi bước: biết đến, tìm hiểu, chuyển đổi."
+  - title: "Phối hợp cùng đội sale"
+    text: "Cùng sale thúc đẩy doanh thu trên mỗi cộng tác viên."
+  - title: "Sự kiện và content"
+    text: "Tổ chức sự kiện, chương trình nội dung để cộng tác viên hoạt động và gắn bó hơn."
+
+journey_title: "Hành trình"
+journey:
+  - when: "Cuối 2021 – nay"
+    title: "Lead Marketing, NNX (Bảo hiểm Ngôi Nhà Xanh)"
+    text: "Đại lý tổ chức phân phối bảo hiểm qua hệ thống cửa hàng F88 và kênh cộng tác viên."
+  - when: "2020 – cuối 2021"
+    title: "Truyền thông, ngành spa"
+    text: ""
+  - when: "2018 – 2020"
+    title: "Nghiên cứu thị trường, Kantar TNS"
+    text: ""
+
+skills_title: "Kỹ năng"
+skills:
+  - name: "Bán hàng"
+    main: true
+  - name: "Hành trình khách hàng"
+    main: true
+  - name: "Tổ chức sự kiện"
+    main: false
+  - name: "Nghiên cứu thị trường"
+    main: false
+  - name: "Tài liệu hỗ trợ bán hàng"
+    main: false
+  - name: "Content bán hàng"
+    main: false
+  - name: "Phối hợp với đội sale"
+    main: false
+
+blog_title: "Blog"
+blog_intro: "Kiến thức và kinh nghiệm Growth Marketing mình học được trong lúc vừa làm vừa học."
+blog_teaser: "Mình chia sẻ kiến thức và kinh nghiệm Growth Marketing học được trong lúc vừa làm vừa học."
+blog_empty: "Bài viết đầu tiên sắp ra mắt."
+blog_empty_text: "Mình sẽ chia sẻ về tăng trưởng cộng tác viên, hành trình khách hàng và marketing hỗ trợ bán hàng."
+
+contact_title: "Liên hệ công việc"
+contact_intro: "Nếu bạn đang tìm người làm Growth Marketing, mình rất vui được trò chuyện."
+contact:
+  - label: "Email"
+    url: "mailto:trang.nguyenthuy2309@gmail.com"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/th%C3%B9y-trang-nguy%E1%BB%85n-0b5959446/"
+  - label: "Zalo"
+    url: "https://zalo.me/0356345436"
+  - label: "Facebook"
+    url: "https://www.facebook.com/thuytrangng1996"
